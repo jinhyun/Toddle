@@ -1,5 +1,5 @@
 var calcMain = {
-    btnFuncObj : ''
+    btnFuncObj: ''
 };
 
 calcMain.init = function () {
@@ -22,10 +22,11 @@ calcMain.init.btnFuncObjInit = function () {
 
 calcMain.bind = function () {
     var btnNum = function () {
-        var btnNumsElemName = 'btn_num';
-        var btnNums = document.getElementsByName(btnNumsElemName);
-        var btnFuncObj;
-        var srcContents;
+        var btnNumsElemName = 'btn_num',
+            btnNums = document.getElementsByName(btnNumsElemName),
+            btnFuncObj,
+            srcContents,
+            contents;
 
         for(var i = btnNums.length; i--;){
             btnNums[i].onclick = function () {
@@ -36,7 +37,7 @@ calcMain.bind = function () {
                     srcContents = calcMain.getCalcDisplay();
                 }
 
-                var contents = (srcContents == 0) ? this.value : srcContents + this.value;
+                contents = (srcContents == 0) ? this.value : srcContents + this.value;
 
                 calcMain.setCalcDisplay(contents);
             };
@@ -44,16 +45,18 @@ calcMain.bind = function () {
     };
 
     var btnFunc = function () {
-        var btnFuncElemName = "btn_func";
-        var btnFuncs = document.getElementsByName(btnFuncElemName);
+        var btnFuncElemName = "btn_func",
+            btnFuncs = document.getElementsByName(btnFuncElemName),
+            func,
+            contents,
+            btnFuncObj,
+            srcContents,
+            destContents;
 
         for(var i = btnFuncs.length; i--;){
             btnFuncs[i].onclick = function () {
-                var func = this.id.replace(btnFuncElemName + '_', '');
-                var contents;
-                var btnFuncObj = calcMain.btnFuncObj;
-                var srcContents;
-                var destContents;
+                func = this.id.replace(btnFuncElemName + '_', '');
+                btnFuncObj = calcMain.btnFuncObj;
 
                 switch (func){
                     case 'clear':

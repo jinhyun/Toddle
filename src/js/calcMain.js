@@ -29,7 +29,7 @@ calcMain.bind = function () {
         for(var i = btnNums.length; i--;){
             btnNums[i].onclick = function () {
                 btnFuncObj = calcMain.btnFuncObj;
-                if (btnFuncObj.turnOn) {
+                if (btnFuncObj.turnOn && srcContents != '0') {
                     srcContents = '0';
                 } else {
                     srcContents = calcMain.getCalcDisplay();

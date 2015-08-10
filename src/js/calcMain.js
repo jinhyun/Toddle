@@ -1,14 +1,12 @@
 var calcMain = {
-    btnFuncObj: ''
-};
-
-calcMain.init = function () {
-    calcMain.btnFuncObj = {
+    btnFuncObj: {
         turnOn: false,
         funcName: '',
         srcContents: ''
-    };
+    }
+};
 
+calcMain.init = function () {
     calcMain.bind();
 };
 
@@ -64,7 +62,6 @@ calcMain.bind = function () {
                         calcMain.init.btnFuncObjInit();
                         break;
                     case 'plus':
-                        // Value assigned to primitive will be lost
                         btnFuncObj.funcName = 'plus';
                         btnFuncObj.turnOn = true;
                         btnFuncObj.srcContents = calcMain.getCalcDisplay();

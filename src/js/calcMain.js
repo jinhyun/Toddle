@@ -22,6 +22,10 @@ calcMain.init = function(){
         calcMain.fn.plus();
     };
 
+    document.getElementById('btn_func_clear').onclick = function(){
+        calcMain.fn.clear();
+    };
+
     document.getElementById('btn_func_equal').onclick = function(){
         calcMain.fn.equal();
     };
@@ -72,6 +76,16 @@ calcMain.fn.reloadSrcNum = function(){
     setTimeout(function () {
         calcDisplay.innerHTML = calcDisplayValue;
     }, 100);
+};
+
+calcMain.fn.clear = function(){
+    calcMain.calcObj.srcNum = '0';
+    calcMain.calcObj.resultNum = '0';
+    calcMain.calcObj.destNum = '0';
+    calcMain.calcObj.enterNum = '';
+    calcMain.calcObj.btnFuncName = '';
+
+    document.getElementById('calcMain_display_div').innerHTML = calcMain.calcObj.resultNum;
 };
 
 calcMain.fn.equal = function(){

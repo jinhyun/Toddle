@@ -1,101 +1,92 @@
 var calcMain = {
-    btnFuncObj: {
-        turnOn: false,
-        funcName: '',
-        srcContents: ''
+    calcObj : ''
+};
+calcMain.fn = {};
+
+var calcObj = function(){
+    this.srcNum = '0';
+    this.destNum = '0';
+    this.resultNum = '0';
+    this.enterNum = '';
+    this.btnFuncName = '';
+};
+
+calcMain.init = function(){
+    calcMain.calcObj = new calcObj();
+
+    var btnNums = document.getElementsByName('btn_num');
+
+    for (var i = btnNums.length; i--;){
+        btnNums[i].onclick = function(){
+            calcMain.fn.clickBtnNum(this);
+        }
     }
-};
 
-calcMain.init = function () {
-    calcMain.bind();
-};
+    document.getElementById('btn_func_plus').onclick = function() {
+        calcMain.fn.plus();
+    };
 
-calcMain.init.btnFuncObjInit = function () {
-    calcMain.btnFuncObj = {
-        turnOn: false,
-        funcName: '',
-        srcContents: ''
+    document.getElementById('btn_func_clear').onclick = function(){
+        calcMain.fn.clear();
+    };
+
+    document.getElementById('btn_func_equal').onclick = function(){
+        calcMain.fn.equal();
     };
 };
 
-calcMain.bind = function () {
-    var btnNum = function () {
-        var btnNumsElemName = 'btn_num',
-            btnNums = document.getElementsByName(btnNumsElemName),
-            btnFuncObj,
-            srcContents,
-            contents;
+calcMain.fn.clickBtnNum = function(btnNumElement){
+    var calcDisplay = document.getElementById('calcMain_display_div'),
+        enterNum = calcMain.calcObj.enterNum;
 
-        for(var i = btnNums.length; i--;){
-            btnNums[i].onclick = function () {
-                btnFuncObj = calcMain.btnFuncObj;
-                if (btnFuncObj.turnOn && srcContents != '0') {
-                    srcContents = '0';
-                } else {
-                    srcContents = calcMain.getCalcDisplay();
-                }
+    enterNum += btnNumElement.value;
+    calcDisplay.innerHTML = enterNum;
 
-                contents = (srcContents == 0) ? this.value : srcContents + this.value;
-
-                calcMain.setCalcDisplay(contents);
-            };
-        }
-    };
-
-    var btnFunc = function () {
-        var btnFuncElemName = "btn_func",
-            btnFuncs = document.getElementsByName(btnFuncElemName),
-            func,
-            contents,
-            btnFuncObj,
-            srcContents,
-            destContents;
-
-        for(var i = btnFuncs.length; i--;){
-            btnFuncs[i].onclick = function () {
-                func = this.id.replace(btnFuncElemName + '_', '');
-                btnFuncObj = calcMain.btnFuncObj;
-
-                switch (func){
-                    case 'clear':
-                        contents = '0';
-                        calcMain.init.btnFuncObjInit();
-                        break;
-                    case 'plus':
-                        btnFuncObj.funcName = 'plus';
-                        btnFuncObj.turnOn = true;
-                        btnFuncObj.srcContents = calcMain.getCalcDisplay();
-
-                        contents = calcMain.getCalcDisplay();
-                        break;
-                    case 'equal':
-                        switch (btnFuncObj.funcName){
-                            case 'plus':
-                                srcContents = btnFuncObj.srcContents;
-                                destContents = calcMain.getCalcDisplay();
-                                contents = Number(srcContents) + Number(destContents);
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    default:
-                        contents = calcMain.getCalcDisplay();
-                }
-
-                calcMain.setCalcDisplay(contents);
-            };
-        }
-    };
-
-    btnNum();
-    btnFunc();
+    // set object
+    calcMain.calcObj.enterNum = enterNum;
 };
 
-calcMain.getCalcDisplay = function () {
-    return document.getElementById("calc_display").innerHTML;
+calcMain.fn.plus = function(){
+    var srcNum = calcMain.calcObj.srcNum,
+        destNum = calcMain.calcObj.destNum,
+        enterNum = calcMain.calcObj.enterNum,
+        resultNum = calcMain.calcObj.resultNum;
+
+    calcMain.calcObj.btnFuncName = calcMain.fn.plus;
+
+    if (enterNum == ''){
+        resultNum = Number(srcNum) + Number(destNum);
+        document.getElementById('calcMain_display_div').innerHTML = '' + resultNum;
+
+    } else {
+        destNum = enterNum;
+        resultNum = Number(srcNum) + Number(destNum);
+
+        calcMain.calcObj.srcNum = resultNum;
+        calcMain.calcObj.destNum = '0';
+        calcMain.calcObj.enterNum = '';
+        calcMain.calcObj.resultNum = resultNum;
+        document.getElementById('calcMain_display_div').innerHTML = '' + resultNum;
+    }
+
+    calcMain.fn.reloadSrcNum();
 };
 
-calcMain.setCalcDisplay = function (contents) {
-    document.getElementById("calc_display").innerHTML = contents;
+calcMain.fn.reloadSrcNum = function(){
+    var calcDisplay = document.getElementById('calcMain_display_div'),
+        calcDisplayValue = calcDisplay.innerHTML;
+
+    calcDisplay.innerHTML = '&nbsp;';
+    setTimeout(function () {
+        calcDisplay.innerHTML = calcDisplayValue;
+    }, 100);
+};
+
+calcMain.fn.clear = function(){
+    calcMain.calcObj = new calcObj();
+    document.getElementById('calcMain_display_div').innerHTML = calcMain.calcObj.resultNum;
+};
+
+calcMain.fn.equal = function(){
+    calcMain.calcObj.btnFuncName();
 };

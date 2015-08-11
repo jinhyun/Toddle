@@ -2,38 +2,38 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Calculator</title>
+    <title></title>
 </head>
 <body>
-    <div>
-        <div id="calc_display">0</div>
-        <div>
-            <input type="button" id="btn_num_0" name="btn_num" value="0"/>
-            <input type="button" id="btn_num_1" name="btn_num" value="1"/>
-            <input type="button" id="btn_num_2" name="btn_num" value="2"/>
-            <input type="button" id="btn_num_3" name="btn_num" value="3"/>
-            <input type="button" id="btn_num_4" name="btn_num" value="4"/>
-            <input type="button" id="btn_num_5" name="btn_num" value="5"/>
-            <input type="button" id="btn_num_6" name="btn_num" value="6"/>
-            <input type="button" id="btn_num_7" name="btn_num" value="7"/>
-            <input type="button" id="btn_num_8" name="btn_num" value="8"/>
-            <input type="button" id="btn_num_9" name="btn_num" value="9"/>
-        </div>
-        <div>
-            <input type="button" id="btn_func_divide"   name="btn_func" value="%"/>
-            <input type="button" id="btn_func_multiply" name="btn_func" value="X"/>
-            <input type="button" id="btn_func_minus"    name="btn_func" value="-"/>
-            <input type="button" id="btn_func_plus"     name="btn_func" value="+"/>
-            <input type="button" id="btn_func_point"    name="btn_func" value="."/>
-            <input type="button" id="btn_func_equal"    name="btn_func" value="="/>
-            <input type="button" id="btn_func_clear"    name="btn_func" value="C"/>
-        </div>
+<div>
+    <div id="calcMain_display_div">0</div>
+    <div id="btn_num_list">
+        <input type="button" id="btn_num_0" name="btn_num" value="0"/>
+        <input type="button" id="btn_num_1" name="btn_num" value="1"/>
+        <input type="button" id="btn_num_2" name="btn_num" value="2"/>
+        <input type="button" id="btn_num_3" name="btn_num" value="3"/>
+        <input type="button" id="btn_num_4" name="btn_num" value="4"/>
+        <input type="button" id="btn_num_5" name="btn_num" value="5"/>
+        <input type="button" id="btn_num_6" name="btn_num" value="6"/>
+        <input type="button" id="btn_num_7" name="btn_num" value="7"/>
+        <input type="button" id="btn_num_8" name="btn_num" value="8"/>
+        <input type="button" id="btn_num_9" name="btn_num" value="9"/>
     </div>
-    <script src="js/calcMain.js"></script>
-    <script type="application/javascript">
-        (function(){
-            calcMain.init();
-        }())
-    </script>
+    <div id="btn_func_list">
+        <input type="button" id="btn_func_point" name="btn_func" value="."/>
+        <input type="button" id="btn_func_minus" name="btn_func" value="-"/>
+        <input type="button" id="btn_func_multiply" name="btn_func" value="X"/>
+        <input type="button" id="btn_func_divide" name="btn_func" value="%"/>
+        <input type="button" id="btn_func_plus" name="btn_func" value="+"/>
+        <input type="button" id="btn_func_clear" name="btn_func" value="C"/>
+        <input type="button" id="btn_func_equal" name="btn_func" value="="/>
+    </div>
+</div>
+<script type="application/javascript" src="js/calcMain.js"></script>
+<script type="application/javascript">
+    (function() {
+        calcMain.init();
+    }());
+</script>
 </body>
 </html>

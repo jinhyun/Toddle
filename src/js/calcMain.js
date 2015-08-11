@@ -1,15 +1,19 @@
 var calcMain = {
-    calcObj : {
-        srcNum: '0',
-        destNum: '0',
-        resultNum: '0',
-        enterNum: '',
-        btnFuncName: ''
-    }
+    calcObj : ''
 };
 calcMain.fn = {};
 
+var calcObj = function(){
+    this.srcNum = '0';
+    this.destNum = '0';
+    this.resultNum = '0';
+    this.enterNum = '';
+    this.btnFuncName = '';
+};
+
 calcMain.init = function(){
+    calcMain.calcObj = new calcObj();
+
     var btnNums = document.getElementsByName('btn_num');
 
     for (var i = btnNums.length; i--;){
@@ -79,12 +83,7 @@ calcMain.fn.reloadSrcNum = function(){
 };
 
 calcMain.fn.clear = function(){
-    calcMain.calcObj.srcNum = '0';
-    calcMain.calcObj.resultNum = '0';
-    calcMain.calcObj.destNum = '0';
-    calcMain.calcObj.enterNum = '';
-    calcMain.calcObj.btnFuncName = '';
-
+    calcMain.calcObj = new calcObj();
     document.getElementById('calcMain_display_div').innerHTML = calcMain.calcObj.resultNum;
 };
 

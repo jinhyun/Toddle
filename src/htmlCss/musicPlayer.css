@@ -1,3 +1,8 @@
+/*
+CSS 에서 nth-of-type 사용으로 Div의 위치와 html의 Id값이 너무 종속되는 느낌
+모든걸 Class로 변경하면 안되는 것인가
+*/
+
 .none {
     display: none;
 }
@@ -31,7 +36,7 @@
     cursor: pointer;
 }
 
-#playerRight div {
+#playerRight > div {
     border-top: 1px black solid;
 }
 
@@ -65,4 +70,35 @@
 
 #lyric {
     padding: 20px;
+}
+
+.table {
+    background: #333;
+}
+
+.table ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #C9C9C9;
+}
+
+.table ul li {
+    list-style: none;
+    padding: 5px 10px;
+}
+
+.table ul li.title {
+    font-weight: bold;
+    color: #666676;
+    background: #e2e2e2;
+    border-bottom: 1px solid #C9C9C9;
+}
+
+.table ul li.even {
+    background: #fff
+}
+
+.table ul li.odd {
+    background: #ebebeb
 }

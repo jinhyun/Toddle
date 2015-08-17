@@ -7,6 +7,7 @@ var calcObj = function() {
     this.resultNumber = 0;
     this.srcInputNumber = 0;
     this.newInputNumber = 0;
+    this.funcName = '';
 };
 
 calcMain.init = function(){
@@ -25,6 +26,10 @@ calcMain.init = function(){
 
     document.getElementById('func_plus').onclick = function() {
         calcMain.pushPlusBtn();
+    };
+
+    document.getElementById('func_equal').onclick = function() {
+        calcMain.pushEqualBtn();
     };
 };
 
@@ -54,7 +59,18 @@ calcMain.pushPlusBtn = function() {
 
     calcMain.calcObj.isPushFuncBtn = true;
     calcMain.calcObj.resultNumber = calcNumber;
+    calcMain.calcObj.funcName = 'plus';
     calcMain.showResultNumber();
+};
+
+calcMain.pushEqualBtn = function() {
+    switch (calcMain.calcObj.funcName){
+        case ('plus'):
+            calcMain.pushPlusBtn();
+            break;
+        default :
+            break;
+    }
 };
 
 calcMain.showResultNumber = function() {

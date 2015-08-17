@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="musicPlayer.css"/>
+</head>
+<body>
+    <div class="wrap">
+        <div id="playerLeft">
+            Player
+        </div>
+        <div id="playerRight">
+            <input type="radio" id="curPlayList_tab" name="menuTab" title="현재재생목록" class="none" checked="checked" />
+            <input type="radio" id="lyric_tab" name="menuTab" title="가사" class="none" />
+
+            <label for="curPlayList_tab">현재재생목록</label>
+            <label for="lyric_tab">가사</label>
+
+            <div id='curPlayList' class='table'>
+                <ul class='title_playList'>
+                    <li class='title'>곡명</li>
+                    <li class='even'>Devil</li>
+                    <li class='odd'>New Thang</li>
+                    <li class='even'>Bounce</li>
+                    <li class='odd'>Let's Get Loud</li>
+                </ul>
+                <ul class='artist_playList'>
+                    <li class='title'>아티스트</li>
+                    <li class='even'>Cash Cash</li>
+                    <li class='odd'>Redfoo</li>
+                    <li class='even'>Sarah Connor</li>
+                    <li class='odd'>Jennifer Lopez</li>
+                </ul>
+                <ul class='time_playList'>
+                    <li class='title'>시간</li>
+                    <li class='even'>03:27</li>
+                    <li class='odd'>03:48</li>
+                    <li class='even'>04:11</li>
+                    <li class='odd'>04:00</li>
+                </ul>
+            </div>
+
+            <div id="lyric">
+                가사 준비 중 입니다.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

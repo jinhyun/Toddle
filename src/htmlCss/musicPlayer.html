@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="musicPlayer.css">
+</head>
+<body>
+    <div class="layout_main">
+        <div class="layout_left">
+            <div class="player">
+                player
+            </div>
+        </div>
+        <div class="layout_right">
+            <div class="tabMenu">
+                <input type="radio" id="curPlayList_tab" name="tabMenu" checked="checked">
+                <input type="radio" id="lyric_tab" name="tabMenu">
+
+                <label for="curPlayList_tab">현재재생목록</label>
+                <label for="lyric_tab">가사</label>
+
+                <div class="curPlayList_table none">
+                    <ul>
+                        <li class="title">No</li>
+                        <li class="odd">1</li>
+                        <li class="even">2</li>
+                        <li class="odd">3</li>
+                        <li class="even">4</li>
+                    </ul>
+                    <ul>
+                        <li class="title">곡명</li>
+                        <li class="odd">노래제목1</li>
+                        <li class="even">노래제목2</li>
+                        <li class="odd">노래제목3</li>
+                        <li class="even">노래제목4</li>
+                    </ul>
+                    <ul>
+                        <li class="title">아티스트</li>
+                        <li class="odd">가수1</li>
+                        <li class="even">가수2</li>
+                        <li class="odd">가수3</li>
+                        <li class="even">가수4</li>
+                    </ul>
+                    <ul>
+                        <li class="title">시간</li>
+                        <li class="odd">03:01</li>
+                        <li class="even">03:02</li>
+                        <li class="odd">03:03</li>
+                        <li class="even">03:04</li>
+                    </ul>
+                </div>
+
+                <div class="floatClear"></div>
+
+                <div class="lyric none">
+                    현재 가사 작업 중입니다
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

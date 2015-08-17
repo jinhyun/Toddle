@@ -1,0 +1,74 @@
+/* common */
+.none {
+    display: none;
+}
+
+.floatClear {
+    clear: both;
+}
+
+/* layout */
+.layout_left {
+    float: left;
+    width: 300px;
+    border: 1px solid #333333;
+    border-right: 0;
+    padding: 10px;
+}
+
+.layout_right {
+    margin-left: 320px;
+    border: 1px solid #333333;
+    padding: 10px;
+}
+
+/* main */
+.tabMenu input:nth-of-type(1),
+.tabMenu input:nth-of-type(2){
+    display: none;
+}
+
+.tabMenu input:nth-of-type(1):checked ~ .curPlayList_table ,
+.tabMenu input:nth-of-type(2):checked ~ .lyric {
+    display: block;
+}
+
+.tabMenu > label {
+    display: inline-block;
+    color: #999999;
+    background: #636365;
+    width: 15%;
+    text-align: center;
+}
+
+.tabMenu > label:hover {
+    cursor: pointer;
+}
+
+.curPlayList_table ul {
+    float: left;
+    border: 1px solid #999999;
+    padding: 0;
+}
+
+.curPlayList_table ul li {
+    list-style: none;
+    padding: 5px 10px;
+}
+
+.curPlayList_table ul li.title {
+    font-weight: bold;
+    border-bottom: 1px solid #999999;
+    background: #e3e3e3;
+}
+
+
+.curPlayList_table ul li.odd {
+    background: #e7e7e7;
+}
+
+
+.curPlayList_table ul li.even {
+    background: #f1f1f1;
+}
+

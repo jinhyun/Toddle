@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="calcMain.css">
+</head>
+<body>
+    <div class="layout_main">
+        <div id="calcDisplay" class="calcDisplay">
+            0
+        </div>
+        <div class="layout_buttons">
+            <div id="number_buttons" class="number_buttons">
+                <input type="button" value="0"/>
+                <input type="button" value="1"/>
+                <input type="button" value="2"/>
+                <input type="button" value="3"/>
+                <input type="button" value="4"/>
+                <input type="button" value="5"/>
+                <input type="button" value="6"/>
+                <input type="button" value="7"/>
+                <input type="button" value="8"/>
+                <input type="button" value="9"/>
+            </div>
+            <div class="func_buttons">
+                <input type="button" value="X"/>
+                <input id="func_plus" type="button" value="+"/>
+                <input id="func_equal" type="button" value="="/>
+                <input id="func_clear" type="button" value="C"/>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="calcMain.js"></script>
+    <script type="text/javascript">
+        (function(){
+            calcMain.init();
+        }());
+    </script>
+</body>
+</html>

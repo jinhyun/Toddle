@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="musicPlayer.css">
+</head>
+<body>
+    <div class="layout">
+        <div class="layout_left">
+            <div class="player">
+                Player
+            </div>
+        </div>
+        <div class="layout_right">
+            <div id="tabMenus" class="tabMenus">
+                <input type="radio" id="curPlayList" name="tabMenu" class="tabMenu" checked="checked">
+                <input type="radio" id="lyric" name="tabMenu" class="tabMenu">
+
+                <label for="curPlayList" class="curPlayList_label">현재재생목록</label>
+                <label for="lyric" class="lyric_label">가사</label>
+
+                <div id="curPlayList_data" class="curPlayList_data">
+                    <table>
+                        <tr>
+                            <th>No</th>
+                            <th>곡명</th>
+                            <th>아티스트</th>
+                            <th>시간</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Let Me</td>
+                            <td>Rihanna</td>
+                            <td>03:50</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Body Party</td>
+                            <td>Ciara</td>
+                            <td>03:55</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Hips Don't Lie</td>
+                            <td>Shakira</td>
+                            <td>04:55</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Crazy In Love</td>
+                            <td>Beyonce</td>
+                            <td>02:55</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="lyric_data" class="lyric_data">
+                    현재 가사 작업 중입니다.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* layout_S */
+.layout {
+    margin: auto;
+    width: 70%;
+}
+
+.layout_left {
+    border: 1px solid #222222;
+    border-right: 0;
+    float: left;
+    width: 300px;
+}
+
+.layout_right {
+    border: 1px solid #222222;
+    margin-left: 300px;
+}
+
+.player {
+    padding: 10px;
+}
+
+.playList {
+    padding: 10px;
+}
+
+.lyric {
+    padding: 10px;
+}
+/* layout_E */
+
+.playerTitle {
+    border-right: 1px solid #222222;
+    background: #444444;
+    color: orange;
+    padding: 10px 0 10px 10px;
+    text-align: left;
+}
+
+.tabMenus input[type='radio'] {
+    display: none;
+}
+
+.tabMenus label {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    width: 50%;
+}
+
+.playList_label {
+    float: left;
+}
+
+.playList_radio ~ .playList,
+.lyric_radio ~ .lyric {
+    display: none;
+}
+
+.playList_radio:checked ~ .playList,
+.lyric_radio:checked ~ .lyric {
+    display: block;
+}
+
+.playList_radio ~ .playList_label,
+.lyric_radio ~ .lyric_label {
+    background: #999999;
+    color: #e3e3e3;
+}
+
+.playList_radio:checked ~ .playList_label,
+.lyric_radio:checked ~ .lyric_label {
+    background: #444444;
+    color: orange;
+}
+
+

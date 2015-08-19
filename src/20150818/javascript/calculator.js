@@ -90,8 +90,27 @@ calcMain.funcPlus = function (ignoreCount) {
     calcMain.showResultNumber();
 };
 
-calcMain.funcMultiply = function () {
+calcMain.funcMultiply = function (ignoreCount) {
+    var inputNumber = calcMain.calcObj.inputNumber,
+        resultNumber = calcMain.calcObj.resultNumber,
+        calculateCount = calcMain.calcObj.calculateCount;
 
+    resultNumber = (resultNumber == 0) ? 1 : resultNumber;
+
+    if (ignoreCount == undefined){
+        ignoreCount = false;
+    }
+
+    if (calculateCount == 1 && !ignoreCount){
+        return;
+    }
+
+    calcMain.calcObj.resultNumber = Number(resultNumber) * Number(inputNumber);
+    calcMain.calcObj.savedInputNumber = calcMain.calcObj.inputNumber;
+    calcMain.calcObj.isSetInputNumber = true;
+    calcMain.calcObj.calculateCount = Number(calcMain.calcObj.calculateCount) + 1;
+    calcMain.calcObj.funcName = 'multiply';
+    calcMain.showResultNumber();
 };
 
 calcMain.funcEqual = function () {
@@ -101,6 +120,9 @@ calcMain.funcEqual = function () {
     switch (funcName){
         case 'plus':
             calcMain.funcPlus(ignoreCount);
+            break;
+        case 'multiply':
+            calcMain.funcMultiply(ignoreCount);
             break;
         default :
             break;

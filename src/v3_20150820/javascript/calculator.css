@@ -1,0 +1,36 @@
+.layout {
+    border: 1px solid #777777;
+    width: 40%;
+    margin: auto;
+}
+
+.calc_display {
+    border: 1px solid #777777;
+    margin: 20px;
+    padding: 10px;
+}
+
+.calc_btns {
+    margin: 20px 20px 0px 20px;
+}
+
+.calc_btns input[type='button'] {
+    margin: 0 5px 10px 0;
+}
+
+.calc_display {
+    background: #085e72;
+    color: #e1e1e1;
+}
+
+.number_btns input[type='button'] {
+    background: #ffffcb;
+    border: 1px solid #777777;
+    padding: 10px 15px 10px 15px;
+}
+
+.function_btns input[type='button'] {
+    background: #ffc04d;
+    border: 1px solid #777777;
+    padding: 10px 15px 10px 15px;
+}

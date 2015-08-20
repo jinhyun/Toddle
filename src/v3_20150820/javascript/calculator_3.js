@@ -66,12 +66,20 @@ calcMain_3.init = function () {
     }
 
     // functionBtnElem
-    document.getElementById('multiply_btn').onclick = function () {
-        calcMain_3.pushMultiplyBtn();
-    };
-
     document.getElementById('plus_btn').onclick = function () {
         calcMain_3.pushPlusBtn();
+    };
+
+    document.getElementById('minus_btn').onclick = function () {
+        calcMain_3.pushMinusBtn();
+    };
+
+    document.getElementById('divide_btn').onclick = function () {
+        calcMain_3.pushDivideBtn();
+    };
+
+    document.getElementById('multiply_btn').onclick = function () {
+        calcMain_3.pushMultiplyBtn();
     };
 
     document.getElementById('equal_btn').onclick = function () {
@@ -102,29 +110,6 @@ calcMain_3.pushNumberBtn = function (numberBtnElem) {
     calcMain_3.showInputNumber();
 };
 
-calcMain_3.pushMultiplyBtn = function () {
-    var calcObj = calcMain_3.calcObj,
-        objInputNumber = calcMain_3.calcObj.getInputNumber(),
-        objResultNumber = calcMain_3.calcObj.getResultNumber(),
-        resultNumber;
-
-    if (calcObj.getFunctionBtnCount() >= 1) {
-        return;
-    } else {
-        calcObj.plusFunctionBtnCount();
-    }
-
-    objInputNumber = (objInputNumber == 0) ? 1 : objInputNumber;        // multiply
-    objResultNumber = (objResultNumber == 0) ? 1 : objResultNumber;     // multiply
-
-    resultNumber = Number(objInputNumber) * Number(objResultNumber);    // multiply
-
-    calcObj.setResultNumber(resultNumber);
-    calcObj.trueIsInitInputNumber();
-    calcObj.pushedFunctionBtn = calcMain_3.pushMultiplyBtn;
-    calcMain_3.showResultNumber();
-};
-
 calcMain_3.pushPlusBtn = function () {
     var calcObj = calcMain_3.calcObj,
         objInputNumber = calcMain_3.calcObj.getInputNumber(),
@@ -142,6 +127,58 @@ calcMain_3.pushPlusBtn = function () {
     calcObj.setResultNumber(resultNumber);
     calcObj.trueIsInitInputNumber();
     calcObj.pushedFunctionBtn = calcMain_3.pushPlusBtn;
+    calcMain_3.showResultNumber();
+};
+
+calcMain_3.pushMinusBtn = function () {
+    var calcObj = calcMain_3.calcObj,
+        objInputNumber = calcMain_3.calcObj.getInputNumber(),
+        objResultNumber = calcMain_3.calcObj.getResultNumber(),
+        resultNumber;
+
+    if (calcObj.getFunctionBtnCount() >= 1) {
+        return;
+    } else {
+        calcObj.plusFunctionBtnCount();
+    }
+
+    // minus
+    if (objResultNumber == 0) {
+        // 처음 계산시
+        resultNumber = Number(objInputNumber);
+    } else {
+        resultNumber = -Number(objInputNumber) + Number(objResultNumber);
+    }
+
+    calcObj.setResultNumber(resultNumber);
+    calcObj.trueIsInitInputNumber();
+    calcObj.pushedFunctionBtn = calcMain_3.pushMinusBtn;
+    calcMain_3.showResultNumber();
+};
+
+calcMain_3.pushMultiplyBtn = function () {
+    var calcObj = calcMain_3.calcObj,
+        objInputNumber = calcMain_3.calcObj.getInputNumber(),
+        objResultNumber = calcMain_3.calcObj.getResultNumber(),
+        resultNumber;
+
+    if (calcObj.getFunctionBtnCount() >= 1) {
+        return;
+    } else {
+        calcObj.plusFunctionBtnCount();
+    }
+
+    // multiply
+    if (objResultNumber == 0){
+        // 처음계산시
+        resultNumber = Number(objInputNumber);
+    } else {
+        resultNumber = Number(objInputNumber) * Number(objResultNumber);
+    }
+
+    calcObj.setResultNumber(resultNumber);
+    calcObj.trueIsInitInputNumber();
+    calcObj.pushedFunctionBtn = calcMain_3.pushMultiplyBtn;
     calcMain_3.showResultNumber();
 };
 

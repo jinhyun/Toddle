@@ -1,0 +1,78 @@
+.layout {
+    margin: auto;
+    width: 60%;
+}
+
+.layout_left {
+    float: left;
+    border: 1px solid #222222;
+    border-right: 0;
+    width: 300px;
+}
+
+.layout_right {
+    border: 1px solid #222222;
+    margin-left: 300px;
+}
+
+.tabMenus input[type='radio'] {
+    display: none;
+}
+
+.tabMenus label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 0 10px 0;
+    width: 50%;
+    text-align: center;
+}
+
+.playerTitle {
+    cursor: pointer;
+    padding: 10px 0 10px 0;
+    border-right: 1px solid #222222;
+}
+
+.playList_label {
+    float: left;
+}
+
+.playList_radio ~ .playList_label,
+.lyric_radio ~ .lyric_label {
+    background: #777777;
+    color: #e1e1e1;
+}
+
+.playerTitle,
+.playList_radio:checked ~ .playList_label,
+.lyric_radio:checked ~ .lyric_label {
+    background: #333333;
+    color: orange;
+}
+
+.playList_radio ~ .playList,
+.lyric_radio ~ .lyric {
+    display: none;
+}
+
+.playList_radio:checked ~ .playList,
+.lyric_radio:checked ~ .lyric {
+    display: block;
+}
+
+.playList {
+    padding: 15px;
+}
+
+.lyric {
+    padding: 15px;
+}
+
+.playerTitle {
+    padding: 10px 0 10px 10px;
+}
+
+.player {
+    padding: 15px;
+}
+

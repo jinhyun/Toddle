@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="musicPlayer_3.css">
+</head>
+<body>
+    <div class="layout">
+        <div class="layout_left">
+            <div class="playerTitle">
+                MusicPlayer
+            </div>
+            <div class="player">
+                Playing...
+            </div>
+        </div>
+        <div class="layout_right">
+            <div class="tabMenus">
+                <input type="radio" id="playList_radio" name="tabMenu" class="playList_radio" checked="checked">
+                <input type="radio" id="lyric_radio" name="tabMenu" class="lyric_radio">
+
+                <label for="playList_radio" class="playList_label">현재재생목록</label>
+                <label for="lyric_radio" class="lyric_label">가사</label>
+
+                <div class="playList">
+                    <table>
+                        <tr class="title">
+                            <th>
+                                <input type="checkbox">
+                            </th>
+                            <th>No</th>
+                            <th>곡명</th>
+                            <th>아티스트</th>
+                            <th>시간</th>
+                        </tr>
+                        <tr class="odd">
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>1</td>
+                            <td>곡명_Data_1</td>
+                            <td>아티스트_Data_1</td>
+                            <td>시간_Data_1</td>
+                        </tr>
+                        <tr class="even">
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>2</td>
+                            <td>곡명_Data_2</td>
+                            <td>아티스트_Data_2</td>
+                            <td>시간_Data_2</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>3</td>
+                            <td>곡명_Data_3</td>
+                            <td>아티스트_Data_3</td>
+                            <td>시간_Data_3</td>
+                        </tr>
+                        <tr class="even">
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>4</td>
+                            <td>곡명_Data_4</td>
+                            <td>아티스트_Data_4</td>
+                            <td>시간_Data_4</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="lyric">
+                    현재 가사 준비 중입니다.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

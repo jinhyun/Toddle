@@ -103,7 +103,26 @@ calcMain_3.pushNumberBtn = function (numberBtnElem) {
 };
 
 calcMain_3.pushMultiplyBtn = function () {
+    var calcObj = calcMain_3.calcObj,
+        objInputNumber = calcMain_3.calcObj.getInputNumber(),
+        objResultNumber = calcMain_3.calcObj.getResultNumber(),
+        resultNumber;
 
+    if (calcObj.getFunctionBtnCount() >= 1) {
+        return;
+    } else {
+        calcObj.plusFunctionBtnCount();
+    }
+
+    objInputNumber = (objInputNumber == 0) ? 1 : objInputNumber;        // multiply
+    objResultNumber = (objResultNumber == 0) ? 1 : objResultNumber;     // multiply
+
+    resultNumber = Number(objInputNumber) * Number(objResultNumber);    // multiply
+
+    calcObj.setResultNumber(resultNumber);
+    calcObj.trueIsInitInputNumber();
+    calcObj.pushedFunctionBtn = calcMain_3.pushMultiplyBtn;
+    calcMain_3.showResultNumber();
 };
 
 calcMain_3.pushPlusBtn = function () {

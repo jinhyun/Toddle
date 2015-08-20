@@ -133,7 +133,7 @@ calcMain_3.pushPlusBtn = function () {
         calcObj.plusFunctionBtnCount();
     }
 
-    resultNumber = Number(objInputNumber) + Number(objResultNumber);
+    resultNumber = Number(objResultNumber) + Number(objInputNumber);
 
     calcObj.setResultNumber(resultNumber);
     calcObj.trueIsInitInputNumber();
@@ -153,7 +153,7 @@ calcMain_3.pushMinusBtn = function () {
         calcObj.plusFunctionBtnCount();
     }
 
-    resultNumber = -Number(objInputNumber) + Number(objResultNumber);
+    resultNumber = Number(objResultNumber) - Number(objInputNumber);
 
     calcObj.setResultNumber(resultNumber);
     calcObj.trueIsInitInputNumber();
@@ -174,7 +174,7 @@ calcMain_3.pushMultiplyBtn = function () {
     }
 
     // multiply
-    resultNumber = Number(objInputNumber) * Number(objResultNumber);
+    resultNumber = Number(objResultNumber) * Number(objInputNumber);
 
     calcObj.setResultNumber(resultNumber);
     calcObj.trueIsInitInputNumber();

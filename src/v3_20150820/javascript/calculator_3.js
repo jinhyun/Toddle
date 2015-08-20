@@ -1,3 +1,14 @@
+/*
+ Error
+    Case 1: 5 * 2 = -
+    Case 2: 2 * 4 -
+
+ Solution
+    Case 1: 숫자를 누르고 난 뒤에만 계산 되도록 변경
+            연속된 기능버튼을 클릭할 경우 계산하지 않도록 변경
+            숫자를 누를때 초기화처리
+    Case 2:
+*/
 var calcMain_3 = {
         calcObj: {}
     }
@@ -43,7 +54,7 @@ var CalcObj = function () {
         functionBtnCount = functionBtnCount + 1;
     };
 
-    this.getFunctionBtnCount = function () {
+    this.pushedFunctionBtnCount = function () {
         return functionBtnCount;
     };
 
@@ -116,7 +127,7 @@ calcMain_3.pushPlusBtn = function () {
         objResultNumber = calcMain_3.calcObj.getResultNumber(),
         resultNumber;
 
-    if (calcObj.getFunctionBtnCount() >= 1) {
+    if (calcObj.pushedFunctionBtnCount() >= 1) {
         return;
     } else {
         calcObj.plusFunctionBtnCount();
@@ -136,19 +147,13 @@ calcMain_3.pushMinusBtn = function () {
         objResultNumber = calcMain_3.calcObj.getResultNumber(),
         resultNumber;
 
-    if (calcObj.getFunctionBtnCount() >= 1) {
+    if (calcObj.pushedFunctionBtnCount() >= 1) {
         return;
     } else {
         calcObj.plusFunctionBtnCount();
     }
 
-    // minus
-    if (objResultNumber == 0) {
-        // 처음 계산시
-        resultNumber = Number(objInputNumber);
-    } else {
-        resultNumber = -Number(objInputNumber) + Number(objResultNumber);
-    }
+    resultNumber = -Number(objInputNumber) + Number(objResultNumber);
 
     calcObj.setResultNumber(resultNumber);
     calcObj.trueIsInitInputNumber();
@@ -162,19 +167,14 @@ calcMain_3.pushMultiplyBtn = function () {
         objResultNumber = calcMain_3.calcObj.getResultNumber(),
         resultNumber;
 
-    if (calcObj.getFunctionBtnCount() >= 1) {
+    if (calcObj.pushedFunctionBtnCount() >= 1) {
         return;
     } else {
         calcObj.plusFunctionBtnCount();
     }
 
     // multiply
-    if (objResultNumber == 0){
-        // 처음계산시
-        resultNumber = Number(objInputNumber);
-    } else {
-        resultNumber = Number(objInputNumber) * Number(objResultNumber);
-    }
+    resultNumber = Number(objInputNumber) * Number(objResultNumber);
 
     calcObj.setResultNumber(resultNumber);
     calcObj.trueIsInitInputNumber();
@@ -185,6 +185,7 @@ calcMain_3.pushMultiplyBtn = function () {
 calcMain_3.pushEqualBtn = function () {
     calcMain_3.calcObj.initFunctionBtnCount();
     calcMain_3.calcObj.pushedFunctionBtn();
+    calcMain_3.calcObj.initFunctionBtnCount();
 };
 
 calcMain_3.pushClearBtn = function () {

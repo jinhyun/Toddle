@@ -1,14 +1,3 @@
-/*
- Error
-    Case 1: 5 * 2 = -
-    Case 2: 2 * 4 -
-
- Solution
-    Case 1: 숫자를 누르고 난 뒤에만 계산 되도록 변경
-            연속된 기능버튼을 클릭할 경우 계산하지 않도록 변경
-            숫자를 누를때 초기화처리
-    Case 2:
-*/
 var calcMain_3 = {
         calcObj: {}
     }
